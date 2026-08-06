@@ -1,0 +1,324 @@
+abilities:
+  - 1: Play the last card of each age.
+  - 2: Build free building for each age.
+  - 3: Build now a discarded building for free.
+  - 4: Copy any guild from a neighbor.
+towns:
+  - 1:
+    name: Rhodes
+    fullName: The Colossus of Rhodes
+    versions:
+      - A:
+        homeResource: ore
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - wood: 2
+          - 2:
+            effect:
+              - warPoints: 2
+            cost:
+              - clay: 3
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - ore: 4
+      - B:
+        homeResource: ore
+        stages:
+          - 1:
+            effect:
+              - warPoints: 1
+              - victoryPoints: 3
+              - coins: 3
+            cost:
+              - stone: 3
+          - 2:
+            effect:
+              - warPoints: 1
+              - victoryPoints: 4
+              - coins: 4
+            cost:
+              - ore: 4
+  - 2:
+    name: Alexandria
+    fullName: The Lighthouse of Alexandria
+    versions:
+      - A:
+        homeResource: glass
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - stone: 2
+          - 2:
+            effect:
+              - resources:
+                - split:
+                  - clay
+                  - ore
+                  - wood
+                  - stone
+            cost:
+              - ore: 2
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - glass: 2
+      - B:
+        homeResource: glass
+        stages:
+          - 1:
+            effect:
+              - resources:
+                - split:
+                  - clay
+                  - ore
+                  - wood
+                  - stone
+            cost:
+              - clay: 2
+          - 2:
+            effect:
+              - resources:
+                - split:
+                  - glass
+                  - loom
+                  - papyrus
+            cost:
+              - wood: 2
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - stone: 3
+  - 3:
+    name: Ephesus
+    fullName: The Template of Artemis in Ephesus
+    versions:
+      - A:
+        homeResource: papyrus
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - stone: 2
+          - 2:
+            effect:
+              - coins: 9
+            cost:
+              - wood: 2
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - papyrus: 2
+      - B:
+        homeResource: papyrus
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 2
+              - coins: 4
+            cost:
+              - stone: 2
+          - 2:
+            effect:
+              - victoryPoints: 3
+              - coins: 4
+            cost:
+              - wood: 2
+          - 3:
+            effect:
+              - victoryPoints: 5
+              - coins: 4
+            cost:
+              - papyrus: 1
+              - loom: 1
+              - glass: 1
+  - 4:
+    name: Babylon
+    fullName: The Hanging Gardens of Babylon
+    versions:
+      - A:
+        homeResource: clay
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - clay: 2
+          - 2:
+            effect:
+              - science: split
+            cost:
+              - wood: 3
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - clay: 4
+      - B:
+        homeResource: clay
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - loom: 1
+              - clay: 1
+          - 2:
+            effect:
+              - ability: 1
+            cost:
+              - glass: 1
+              - wood: 2
+          - 3:
+            effect:
+              - science: split
+            cost:
+              - papyrus: 1
+              - clay: 3
+  - 5:
+    name: Olympia
+    fullName: The Statue of Zeus in Olympia
+    versions:
+      - A:
+        homeResource: wood
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - wood: 2
+          - 2:
+            effect:
+              - ability: 2
+            cost:
+              - stone: 2
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - ore: 2
+      - B:
+        homeResource: wood
+        stages:
+          - 1:
+            effect:
+              - cheaperResources:
+                - direction: right
+                - resources:
+                  - clay
+                  - stone
+                  - ore
+                  - wood
+            cost:
+              - wood: 2
+          - 2:
+            effect:
+              - victoryPoints: 5
+            cost:
+              - stone: 2
+          - 3:
+            effect:
+              - ability: 4
+            cost:
+              - loom: 1
+              - ore: 2
+  - 6:
+    name: Halicarnassus
+    fullName: The Mausoleum of Halicarnassus
+    versions:
+      - A:
+        homeResource: loom
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - clay: 2
+          - 2:
+            effect:
+              - ability: 3
+            cost:
+              - ore: 3
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - loom: 2
+      - B:
+        homeResource: loom
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 2
+              - ability: 3
+            cost:
+              - ore: 2
+          - 2:
+            effect:
+              - victoryPoints: 1
+              - ability: 3
+            cost:
+              - clay: 3
+          - 3:
+            effect:
+              - ability: 3
+            cost:
+              - glass: 1
+              - papyrus: 1
+              - loom: 1
+  - 7:
+    name: Giza
+    fullName: The Pyramids of Giza
+    versions:
+      - A:
+        homeResource: stone
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - stone: 2
+          - 2:
+            effect:
+              - victoryPoints: 5
+            cost:
+              - wood: 3
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - stone: 4
+      - B:
+        homeResource: stone
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - wood: 2
+          - 2:
+            effect:
+              - victoryPoints: 5
+            cost:
+              - stone: 3
+          - 3:
+            effect:
+              - victoryPoints: 5
+            cost:
+              - clay: 3
+          - 4:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - papyrus: 1
+              - stone: 4

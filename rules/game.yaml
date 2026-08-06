@@ -1,0 +1,25 @@
+ages: 3
+turnsInAge: 6
+initPackSize: 7
+minPlayers: 3
+maxPlayers: 7
+cardsPassingDirections:
+  - clockwise
+  - counter-clockwise
+  - clockwise
+warDefeatPoints:
+  - 1
+  - 1
+  - 1
+warVictoryPoints:
+  - 1
+  - 3
+  - 5
+guildsPerPlayers:
+  - 3: 5
+  - 4: 6
+  - 5: 7
+  - 6: 8
+  - 7: 9
+resourcePrice: 2
+initCoins: 3
