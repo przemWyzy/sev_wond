@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.15)
-project(SevWond VERSION 0.1.0)
+project(
+    SevWond
+    VERSION 0.1.1
+)
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if(MSVC)
     # for windows
@@ -10,9 +14,12 @@ else()
     add_compile_options(-Wall -Wextra -pedantic -Werror -g)
 endif()
 
-include_directories(logic)
 
-add_subdirectory(dev)
-add_subdirectory(logic)
+add_subdirectory(apps)
+add_subdirectory(src)
 
-# file(RENAME "./build/dev/mainDev" "./build/mainDev")
+include_directories(src)
+
+set_target_properties(devGame PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin
+)

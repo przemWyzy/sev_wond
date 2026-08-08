@@ -1,10 +1,8 @@
 // logic/player.h
+#pragma once
 
-#ifndef LOGIC_LIBS_PLAYER_H
-#define LOGIC_LIBS_PLAYER_H
-
-#include "vector"
-#include "string"
+#include <vector>
+#include <string>
 
 using namespace std;
 
@@ -17,5 +15,3 @@ class Player {
     Player(int playerCount);
     int getPlayerCount();
 };
-
-#endif /* LOGIC_LIBS_PLAYER_H */

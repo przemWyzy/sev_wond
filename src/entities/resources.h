@@ -1,10 +1,8 @@
 // logic/resources.h
+#pragma once
 
-#ifndef LOGIC_LIBS_RESOURCES_H
-#define LOGIC_LIBS_RESOURCES_H
-
-#include "vector"
-#include "string"
+#include <vector>
+#include <string>
 
 using namespace std;
 
@@ -40,5 +38,3 @@ class Resources {
     short addGlass(short glass);
     short addSilk(short silk);
 };
-
-#endif /* LOGIC_LIBS_RESOURCES_H */

@@ -1,1 +1,2 @@
-add_library(logic game.cc game.h)
+add_subdirectory(entities)
+add_subdirectory(players)
