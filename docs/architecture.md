@@ -20,6 +20,15 @@ classDiagram
     Town "1" o-- "*" Card : builtWonders
 ```
 
+Dependencies:
+| Class  | Includes   | Forward Declaration |
+|--------|------------|---------------------|
+| Game   | Deck, Town | Player, Card        |
+| Player | -          | Town, Card          |
+| Deck   | Card       | -                   |
+| Town   | -          | Card                |
+| Card   | -          | -                   |
+
 ## Game state diagram
 
 ```mermaid
