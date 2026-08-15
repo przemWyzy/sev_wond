@@ -1,6 +1,6 @@
 ages: 3
 turnsInAge: 6
-initPackSize: 7
+initHandSize: 7
 minPlayers: 3
 maxPlayers: 7
 cardsPassingDirections:

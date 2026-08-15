@@ -4,10 +4,10 @@
 #include "player.h"
 #include "card.h"
 
-Game::Game(std::uint8_t playerCnt) {
+Game::Game(std::uint32_t playerCnt) {
     this->playerCnt = playerCnt;
 }
 
-std::uint8_t Game::getPlayerCount() const {
+std::uint32_t Game::getPlayerCount() const {
     return this->playerCnt;
 }

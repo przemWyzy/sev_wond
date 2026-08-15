@@ -1,25 +1,33 @@
-// logic/card.h
+// src/entities/card.h
+#pragma once
 
-#ifndef LOGIC_LIBS_CARD_H
-#define LOGIC_LIBS_CARD_H
+#include "entityEffect.h"
 
-#include "resources.h"
-#include "vector"
-#include "string"
-
-using namespace std;
+#include <memory>
+#include <vector>
+#include <map>
+#include <string>
 
 class Card {
-  private:
-    short id;
-    short epoch;
-    string name;
-    Resources price;
-    short parentCardId;
-    string type;
-  public:
-    Card(int playerCount);
-    int getPlayerCount();
-};
+private:
+  std::string name;
+  std::uint32_t age;
+  std::string type;
+  std::vector<effects::EntityEffect> effects;
+  std::map<effects::Resource, std::uint32_t> cost;
+  std::vector<std::shared_ptr<Card>> parents;
+  std::vector<std::shared_ptr<Card>> children;
+  std::uint32_t frequency;
 
-#endif /* LOGIC_LIBS_CARD_H */
+public:
+  Card();
+
+  std::map<effects::Resource, std::uint32_t> getStableResources() const;
+  std::vector<std::map<effects::Resource, std::uint32_t>> getSplitResources() const;
+  std::uint32_t getCoins() const;
+  std::uint32_t getVictoryPoints() const;
+  std::uint32_t getWarPoints() const;
+  std::pair<effects::Discount, effects::Direction> getDiscount() const;
+  std::map<effects::ScienceType, std::uint32_t> getStableScience() const;
+  std::vector<std::map<effects::ScienceType, std::uint32_t>> getSplitScience() const;
+};
