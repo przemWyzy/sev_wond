@@ -1,11 +1,22 @@
 // apps/devGame.cc
 
 #include <game.h>
+#include <player.h>
+
 #include <iostream>
+#include <memory>
 
 int main() {
-    Game game = Game(4);
-    std::cout << game.getPlayerCount() << std::endl;
-    std::cout << "asdf" << std::endl;
+    Game game = Game();
+
+    Player player1 = Player("Robert Kubica");
+    Player player2 = Player("Marius Pudzianowski");
+    Player player3 = Player("Maria Skłodowska-Curie");
+
+    game.registerPlayer(std::make_shared<Player>(player1));
+    game.registerPlayer(std::make_shared<Player>(player2));
+    std::cout << "Player count: " << game.getPlayerCount() << std::endl;
+    game.registerPlayer(std::make_shared<Player>(player3));
+    std::cout << "Player count: " << game.getPlayerCount() << std::endl;
     return 0;
 }

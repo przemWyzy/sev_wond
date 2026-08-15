@@ -1,4 +1,4 @@
-// logic/game.h
+// src/entities/game.h
 #pragma once
 
 #include <memory>
@@ -8,16 +8,17 @@ class Player;
 
 class Game {
 private:
-  std::uint32_t age;
-  std::uint32_t round;
-  std::uint32_t playerCnt;
+  std::uint32_t age_;
+  std::uint32_t round_;
+  std::vector<std::shared_ptr<Player>> playes_;
 
 public:
-  Game(std::uint32_t playerCnt);
+  Game();
 
+  std::shared_ptr<Player> getPlayer(std::uint32_t playerId) const;
   std::uint32_t getPlayerCount() const;
 
-  void registerPlayer(std::shared_ptr<Player>);
+  std::uint32_t registerPlayer(std::shared_ptr<Player> player);
   void initGame();
   void finishRound();
   void finishAge();
