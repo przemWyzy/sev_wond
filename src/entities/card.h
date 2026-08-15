@@ -3,13 +3,13 @@
 
 #include "entityEffect.h"
 
-#include <memory>
-#include <vector>
 #include <map>
+#include <memory>
 #include <string>
+#include <vector>
 
 class Card {
-private:
+ private:
   std::string name;
   std::uint32_t age;
   std::string type;
@@ -19,7 +19,7 @@ private:
   std::vector<std::shared_ptr<Card>> children;
   std::uint32_t frequency;
 
-public:
+ public:
   Card();
 
   std::map<effects::Resource, std::uint32_t> getStableResources() const;

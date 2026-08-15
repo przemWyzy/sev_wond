@@ -1,13 +1,13 @@
 // src/entities/town.h
 #pragma once
 
-#include <vector>
 #include <memory>
+#include <vector>
 
 class Card;
 
 class Town {
-private:
+ private:
   std::vector<std::shared_ptr<Card>> wonderStagesCards;
   std::vector<std::shared_ptr<Card>> builtCards;
 
@@ -17,6 +17,6 @@ private:
   std::vector<std::shared_ptr<Card>> scienceCards;
   std::vector<std::shared_ptr<Card>> discountCards;
 
-public:
+ public:
   Town();
 };

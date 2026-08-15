@@ -1,9 +1,9 @@
 // src/entities/entityEffect.h
 #pragma once
 
-#include <vector>
-#include <set>
 #include <map>
+#include <set>
+#include <vector>
 
 namespace effects {
 
@@ -19,39 +19,35 @@ enum class EntityEffectType {
   Science
 };
 
-enum class Resource {
-  Money, Wood, Stone, Clay, Ore, Papyrus, Glass, Loom
-};
+enum class Resource { Money, Wood, Stone, Clay, Ore, Papyrus, Glass, Loom };
 
-enum class Discount {
-  CheaperMaterials, CheaperResources
-};
+enum class Discount { CheaperMaterials, CheaperResources };
 
-enum class ScienceType {
-  Gear, Sextant, Slate
-};
+enum class ScienceType { Gear, Sextant, Slate };
 
-enum class Direction {
-  Left, Self, Right
-};
+enum class Direction { Left, Self, Right };
 
-enum class NeighborEffectType {
-	Coins, VictoryPoints
-};
+enum class NeighborEffectType { Coins, VictoryPoints };
 
 enum class NeighborEffectSource {
-	BrownCards, GreyCards, YellowCards, GreenCards, RedCards, WarDefeatPoints, PurpleCards, BlueCards, WonderStages
+  BrownCards,
+  GreyCards,
+  YellowCards,
+  GreenCards,
+  RedCards,
+  WarDefeatPoints,
+  PurpleCards,
+  BlueCards,
+  WonderStages
 };
 
-enum class Ability {
-  LastCardOfAge, FreeBuildingInAge, BuildDiscardedBuilding, CopyGuild
-};
+enum class Ability { LastCardOfAge, FreeBuildingInAge, BuildDiscardedBuilding, CopyGuild };
 
 class EntityEffect {
-private:
+ private:
   EntityEffectType effectType;
 
-public:
+ public:
   virtual std::map<Resource, std::uint32_t> getStableResources() const;
   virtual std::vector<std::map<Resource, std::uint32_t>> getSplitResources() const;
   virtual std::uint32_t getCoins() const;
@@ -65,11 +61,11 @@ public:
 };
 
 class ResourceEffect : EntityEffect {
-private:
+ private:
   std::map<Resource, std::uint32_t> stableResources;
   std::vector<std::map<Resource, std::uint32_t>> splitResources;
 
-public:
+ public:
   ResourceEffect(const std::map<Resource, std::uint32_t>& initStableResources);
   ResourceEffect(const std::vector<std::map<Resource, std::uint32_t>>& initSplitResources);
 
@@ -80,11 +76,11 @@ public:
 };
 
 class ScienceEffect : EntityEffect {
-private:
+ private:
   std::map<ScienceType, std::uint32_t> stableScience;
   std::vector<std::map<ScienceType, std::uint32_t>> splitScience;
 
-public:
+ public:
   ScienceEffect(const std::map<ScienceType, std::uint32_t>& initStableScience);
   ScienceEffect(const std::vector<std::map<ScienceType, std::uint32_t>>& initSplitScience);
 
@@ -95,71 +91,67 @@ public:
 };
 
 class VictoryPointsEffect : EntityEffect {
-private:
+ private:
   std::uint32_t victoryPoints;
 
-public:
+ public:
   VictoryPointsEffect(std::uint32_t victoryPoints);
 
   std::uint32_t getVictoryPoints() const;
 };
 
 class WarPointsEffect : EntityEffect {
-private:
+ private:
   std::uint32_t warPoints;
 
-public:
+ public:
   WarPointsEffect(std::uint32_t warPoints);
 
   std::uint32_t getWarPoints() const;
 };
 
 class CoinsEffect : EntityEffect {
-private:
+ private:
   std::uint32_t coins;
 
-public:
+ public:
   CoinsEffect(std::uint32_t coins);
 
   std::uint32_t getCoins() const;
 };
 
 class NeighborEffect : EntityEffect {
-private:
-	NeighborEffectType neighborEffect;
-	std::vector<Direction> directions;
-	std::vector<NeighborEffectSource> sources;
-	std::uint32_t effectValue;
+ private:
+  NeighborEffectType neighborEffect;
+  std::vector<Direction> directions;
+  std::vector<NeighborEffectSource> sources;
+  std::uint32_t effectValue;
 
-public:
-	NeighborEffect(
-		NeighborEffectType neighborEffect,
-		std::vector<Direction> directions,
-		std::vector<NeighborEffectSource> sources,
-		std::uint32_t effectValue
-	);
+ public:
+  NeighborEffect(NeighborEffectType neighborEffect, std::vector<Direction> directions,
+                 std::vector<NeighborEffectSource> sources, std::uint32_t effectValue);
 
   std::uint32_t getCoins() const;
   std::uint32_t getVictoryPoints() const;
 };
 
 class DiscountEffect : EntityEffect {
-private:
+ private:
   Discount discount;
   Direction direction;
 
-public:
+ public:
   DiscountEffect(Discount discount, Direction direction);
 
   std::pair<Discount, Direction> getDiscount() const;
 };
 
 class AbilityEffect : EntityEffect {
-private:
+ private:
   Ability ability;
   bool isAvaliable;
 
-public:
+ public:
   AbilityEffect(Ability ability);
 
   Ability getAbility() const;
@@ -167,4 +159,4 @@ public:
   void restoreAbility();
 };
 
-} // effects
+}  // namespace effects

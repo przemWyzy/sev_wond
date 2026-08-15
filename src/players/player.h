@@ -4,10 +4,10 @@
 #include <string>
 
 class Player {
-private:
+ private:
   std::string name;
 
-public:
+ public:
   Player(std::string name);
   void makeMove() const;
 };

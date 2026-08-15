@@ -1,8 +1,9 @@
 // logic/game.cc
 
 #include "game.h"
-#include "player.h"
+
 #include "card.h"
+#include "player.h"
 
 #include <stdexcept>
 
@@ -13,9 +14,9 @@ Game::Game() {
 
 std::shared_ptr<Player> Game::getPlayer(std::uint32_t playerId) const {
   if (playerId == 0 || this->playes_.size() < playerId) {
-    throw std::invalid_argument(
-      "Invalid playerId, expected ids between 1 and " + std::to_string(this->playes_.size()) + ", got: " + std::to_string(playerId)
-    );
+    throw std::invalid_argument("Invalid playerId, expected ids between 1 and " +
+                                std::to_string(this->playes_.size()) +
+                                ", got: " + std::to_string(playerId));
   }
   return this->playes_[playerId];
 }

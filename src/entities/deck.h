@@ -3,17 +3,18 @@
 
 #include "card.h"
 
-#include <vector>
 #include <map>
 #include <memory>
+#include <vector>
 
 class Deck {
-private:
-  std::vector<Card> allCards
+ private:
+  std::vector<Card> allCards;
 
   std::vector<std::shared_ptr<Card>> discard;
   std::map<std::uint32_t, std::map<std::uint32_t, std::shared_ptr<Card>>> preparedHands;
-public:
+
+ public:
   Deck();
 
   std::vector<std::shared_ptr<Card>> getPlayerHand(std::uint32_t playerId, std::uint32_t age) const;

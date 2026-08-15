@@ -7,12 +7,12 @@
 class Player;
 
 class Game {
-private:
+ private:
   std::uint32_t age_;
   std::uint32_t round_;
   std::vector<std::shared_ptr<Player>> playes_;
 
-public:
+ public:
   Game();
 
   std::shared_ptr<Player> getPlayer(std::uint32_t playerId) const;

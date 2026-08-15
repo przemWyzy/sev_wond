@@ -4,10 +4,11 @@
 #include "player.h"
 
 class ComputerPlayer {
-private:
-	std::string seed;
+ private:
+  std::string seed;
 
-public:
-	ComputerPlayer()
-	virtual void calculateMove();
+ public:
+  ComputerPlayer();
+
+  virtual void calculateMove();
 };
