@@ -16,6 +16,7 @@ endif()
 
 
 add_subdirectory(apps)
+add_subdirectory(configs)
 add_subdirectory(src)
 
 include_directories(src)

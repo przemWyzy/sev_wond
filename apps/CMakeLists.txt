@@ -6,4 +6,5 @@ target_link_libraries(devGame
     PRIVATE
         entities
         players
+        configs
 )

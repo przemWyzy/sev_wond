@@ -4,14 +4,32 @@
 TODO
 
 ## Building project
-To build project:
+Project can be build both on windows and linux os.
+
+Requirements:
+- c++ 17+
+- conan 2
+
+### Windows / Linux
+Initializing conan dependencies (from project dir)
 ```
-mkdir build
-cd build
-cmake ..
-make
+conan profile detect --force
+conan install . --build=missing -s build_type=Debug
 ```
-Run in `/build`:
+
+**Option 1**
+Building project from powershell/bash (from project dir)
 ```
-./app
+cmake --preset conan-default
+cmake --build --preset conan-debug
 ```
+
+**Option 2**
+Building project using VSCode
+```
+VS Code: CMake Select Configure Preset
+CMake: Configure
+CMake: Build
+```
+
+Build project in `bin/Debug/*`

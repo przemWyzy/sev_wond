@@ -10,4 +10,5 @@ target_include_directories(entities
 target_link_libraries(entities
     PRIVATE
         players
+        configs
 )

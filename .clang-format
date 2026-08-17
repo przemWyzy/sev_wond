@@ -1,5 +1,5 @@
 Language: Cpp
-BasedOnStyle: Google
+BasedOnStyle: Google  # https://github.com/kehanXue/google-style-clang-format/blob/master/.clang-format
 AccessModifierOffset: -1
 AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: None

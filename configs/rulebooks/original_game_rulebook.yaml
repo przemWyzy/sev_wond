@@ -1,0 +1,1394 @@
+game:
+  ages: 3
+  turnsInAge: 6
+  initHandSize: 7
+  minPlayers: 3
+  maxPlayers: 7
+  cardsPassingDirections:
+    - clockwise
+    - counter-clockwise
+    - clockwise
+  warDefeatPoints:
+    - 1
+    - 1
+    - 1
+  warVictoryPoints:
+    - 1
+    - 3
+    - 5
+  guildsPerPlayers:
+    - 3: 5
+    - 4: 6
+    - 5: 7
+    - 6: 8
+    - 7: 9
+  resourcePrice: 2
+  initCoins: 3
+
+resources:
+  - materials:
+    - clay
+    - ore
+    - stone
+    - wood
+  - goods:
+    - glass
+    - loom
+    - papyrus
+
+abilities:
+  - 1: Play the last card of each age.
+  - 2: Build free building for each age.
+  - 3: Build now a discarded building for free.
+  - 4: Copy any guild from a neighbor.
+
+towns:
+  - 1:
+    name: Rhodes
+    fullName: The Colossus of Rhodes
+    versions:
+      - A:
+        homeResource: ore
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - wood: 2
+          - 2:
+            effect:
+              - warPoints: 2
+            cost:
+              - clay: 3
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - ore: 4
+      - B:
+        homeResource: ore
+        stages:
+          - 1:
+            effect:
+              - warPoints: 1
+              - victoryPoints: 3
+              - coins: 3
+            cost:
+              - stone: 3
+          - 2:
+            effect:
+              - warPoints: 1
+              - victoryPoints: 4
+              - coins: 4
+            cost:
+              - ore: 4
+  - 2:
+    name: Alexandria
+    fullName: The Lighthouse of Alexandria
+    versions:
+      - A:
+        homeResource: glass
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - stone: 2
+          - 2:
+            effect:
+              - resources:
+                - split:
+                  - clay
+                  - ore
+                  - wood
+                  - stone
+            cost:
+              - ore: 2
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - glass: 2
+      - B:
+        homeResource: glass
+        stages:
+          - 1:
+            effect:
+              - resources:
+                - split:
+                  - clay
+                  - ore
+                  - wood
+                  - stone
+            cost:
+              - clay: 2
+          - 2:
+            effect:
+              - resources:
+                - split:
+                  - glass
+                  - loom
+                  - papyrus
+            cost:
+              - wood: 2
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - stone: 3
+  - 3:
+    name: Ephesus
+    fullName: The Template of Artemis in Ephesus
+    versions:
+      - A:
+        homeResource: papyrus
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - stone: 2
+          - 2:
+            effect:
+              - coins: 9
+            cost:
+              - wood: 2
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - papyrus: 2
+      - B:
+        homeResource: papyrus
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 2
+              - coins: 4
+            cost:
+              - stone: 2
+          - 2:
+            effect:
+              - victoryPoints: 3
+              - coins: 4
+            cost:
+              - wood: 2
+          - 3:
+            effect:
+              - victoryPoints: 5
+              - coins: 4
+            cost:
+              - papyrus: 1
+              - loom: 1
+              - glass: 1
+  - 4:
+    name: Babylon
+    fullName: The Hanging Gardens of Babylon
+    versions:
+      - A:
+        homeResource: clay
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - clay: 2
+          - 2:
+            effect:
+              - science: split
+            cost:
+              - wood: 3
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - clay: 4
+      - B:
+        homeResource: clay
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - loom: 1
+              - clay: 1
+          - 2:
+            effect:
+              - ability: 1
+            cost:
+              - glass: 1
+              - wood: 2
+          - 3:
+            effect:
+              - science: split
+            cost:
+              - papyrus: 1
+              - clay: 3
+  - 5:
+    name: Olympia
+    fullName: The Statue of Zeus in Olympia
+    versions:
+      - A:
+        homeResource: wood
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - wood: 2
+          - 2:
+            effect:
+              - ability: 2
+            cost:
+              - stone: 2
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - ore: 2
+      - B:
+        homeResource: wood
+        stages:
+          - 1:
+            effect:
+              - cheaperResources:
+                - direction: right
+                - resources:
+                  - clay
+                  - stone
+                  - ore
+                  - wood
+            cost:
+              - wood: 2
+          - 2:
+            effect:
+              - victoryPoints: 5
+            cost:
+              - stone: 2
+          - 3:
+            effect:
+              - ability: 4
+            cost:
+              - loom: 1
+              - ore: 2
+  - 6:
+    name: Halicarnassus
+    fullName: The Mausoleum of Halicarnassus
+    versions:
+      - A:
+        homeResource: loom
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - clay: 2
+          - 2:
+            effect:
+              - ability: 3
+            cost:
+              - ore: 3
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - loom: 2
+      - B:
+        homeResource: loom
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 2
+              - ability: 3
+            cost:
+              - ore: 2
+          - 2:
+            effect:
+              - victoryPoints: 1
+              - ability: 3
+            cost:
+              - clay: 3
+          - 3:
+            effect:
+              - ability: 3
+            cost:
+              - glass: 1
+              - papyrus: 1
+              - loom: 1
+  - 7:
+    name: Giza
+    fullName: The Pyramids of Giza
+    versions:
+      - A:
+        homeResource: stone
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - stone: 2
+          - 2:
+            effect:
+              - victoryPoints: 5
+            cost:
+              - wood: 3
+          - 3:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - stone: 4
+      - B:
+        homeResource: stone
+        stages:
+          - 1:
+            effect:
+              - victoryPoints: 3
+            cost:
+              - wood: 2
+          - 2:
+            effect:
+              - victoryPoints: 5
+            cost:
+              - stone: 3
+          - 3:
+            effect:
+              - victoryPoints: 5
+            cost:
+              - clay: 3
+          - 4:
+            effect:
+              - victoryPoints: 7
+            cost:
+              - papyrus: 1
+              - stone: 4
+
+cards:
+  - 1:
+    name: Lumber Yard
+    age: 1
+    type: brown
+    effect:
+      - resources:
+        - wood: 1
+    frequency:
+      - 3
+      - 4
+  - 2:
+    name: Stone Pit
+    age: 1
+    type: brown
+    effect:
+      - resources:
+        - stone: 1
+    frequency:
+      - 3
+      - 5
+  - 3:
+    name: Clay Pool
+    age: 1
+    type: brown
+    effect:
+      - resources:
+        - clay: 1
+    frequency:
+      - 3
+      - 5
+  - 4:
+    name: Ore Vein
+    age: 1
+    type: brown
+    effect:
+      - resources:
+        - ore: 1
+    frequency:
+      - 3
+      - 5
+  - 5:
+    name: Tree Farm
+    age: 1
+    type: brown
+    effect:
+      - resources:
+        - split:
+          - wood
+          - clay
+    cost:
+      - money: 1
+    frequency:
+      - 6
+  - 6:
+    name: Excavation
+    age: 1
+    type: brown
+    effect:
+      - resources:
+        - split:
+          - stone
+          - clay
+    cost:
+      - money: 1
+    frequency:
+      - 4
+  - 7:
+    name: Clay Pit
+    age: 1
+    type: brown
+    effect:
+      - resources:
+        - split:
+          - clay
+          - ore
+    cost:
+      - money: 1
+    frequency:
+      - 3
+  - 8:
+    name: Timber Yard
+    age: 1
+    type: brown
+    effect:
+      - resources:
+        - split:
+          - stone
+          - wood
+    cost:
+      - money: 1
+    frequency:
+      - 3
+  - 9:
+    name: Forest Cave
+    age: 1
+    type: brown
+    effect:
+      - resources:
+        - split:
+          - wood
+          - ore
+    cost:
+      - money: 1
+    frequency:
+      - 5
+  - 10:
+    name: Mine
+    age: 1
+    type: brown
+    effect:
+      - resources:
+        - split:
+          - ore
+          - stone
+    cost:
+      - money: 1
+    frequency:
+      - 6
+  - 11:
+    name: Loom
+    age: 1
+    type: grey
+    effect:
+      - resources:
+        - loom: 1
+    frequency:
+      - 3
+      - 6
+  - 12:
+    name: Glassworks
+    age: 1
+    type: grey
+    effect:
+      - resources:
+        - glass: 1
+    frequency:
+      - 3
+      - 6
+  - 13:
+    name: Press
+    age: 1
+    type: grey
+    effect:
+      - resources:
+        - papyrus: 1
+    frequency:
+      - 3
+      - 6
+  - 14:
+    name: Sawmill
+    age: 2
+    type: brown
+    effect:
+      - resources:
+        - wood: 2
+    cost:
+      - money: 1
+    frequency:
+      - 3
+      - 4
+  - 15:
+    name: Quarry
+    age: 2
+    type: brown
+    effect:
+      - resources:
+        - stone: 2
+    cost:
+      - money: 1
+    frequency:
+      - 3
+      - 4
+  - 16:
+    name: Brickyard
+    age: 2
+    type: brown
+    effect:
+      - resources:
+        - clay: 2
+    cost:
+      - money: 1
+    frequency:
+      - 3
+      - 4
+  - 17:
+    name: Foundry
+    age: 2
+    type: brown
+    effect:
+      - resources:
+        - ore: 2
+    cost:
+      - money: 1
+    frequency:
+      - 3
+      - 4
+  - 18:
+    name: Loom
+    age: 2
+    type: grey
+    effect:
+      - resources:
+        - loom: 1
+    frequency:
+      - 3
+      - 6
+  - 19:
+    name: Glassworks
+    age: 2
+    type: grey
+    effect:
+      - resources:
+        - glass: 1
+    frequency:
+      - 3
+      - 6
+  - 20:
+    name: Press
+    age: 2
+    type: grey
+    effect:
+      - resources:
+        - papyrus: 1
+    frequency:
+      - 3
+      - 6
+  - 21:
+    name: Worders Guild
+    age: 3
+    type: purple
+    effect:
+      - neighbor:
+        - type: victoryPoints
+        - directions: left-right
+        - basedOn: brown
+        - each: 1
+    cost:
+      - ore: 2
+      - clay: 1
+      - stone: 1
+      - wood: 1
+  - 22:
+    name: Creaftsmens Guild
+    age: 3
+    type: purple
+    effect:
+      - neighbor:
+        - type: victoryPoints
+        - directions: left-right
+        - basedOn: grey
+        - each: 2
+    cost:
+      - ore: 2
+      - stone: 2
+  - 23:
+    name: Traders Guild
+    age: 3
+    type: purple
+    effect:
+      - neighbor:
+        - type: victoryPoints
+        - directions: left-right
+        - basedOn: yellow
+        - each: 1
+    cost:
+      - loom: 1
+      - papyrus: 1
+      - glass: 1
+  - 24:
+    name: Philosophers Guild
+    age: 3
+    type: purple
+    effect:
+      - neighbor:
+        - type: victoryPoints
+        - directions: left-right
+        - basedOn: green
+        - each: 1
+    cost:
+      - clay: 3
+      - loom: 1
+      - papyrus: 1
+  - 25:
+    name: Spies Guild
+    age: 3
+    type: purple
+    effect:
+      - neighbor:
+        - type: victoryPoints
+        - directions: left-right
+        - basedOn: red
+        - each: 1
+    cost:
+      - clay: 3
+      - glass: 1
+  - 26:
+    name: Strategists Guild
+    age: 3
+    type: purple
+    effect:
+      - neighbor:
+        - type: victoryPoints
+        - directions: left-right
+        - basedOn: warDefeatPoints
+        - each: 1
+    cost:
+      - ore: 2
+      - stone: 1
+      - loom: 1
+  - 27:
+    name: Shipowners Guild
+    age: 3
+    type: purple
+    effect:
+      - neighbor:
+        - type: victoryPoints
+        - directions: self
+        - basedOn: brown
+        - each: 1
+      - neighbor:
+        - type: victoryPoints
+        - directions: self
+        - basedOn: grey
+        - each: 1
+      - neighbor:
+        - type: victoryPoints
+        - directions: self
+        - basedOn: purple
+        - each: 1
+    cost:
+      - wood: 3
+      - papyrus: 1
+      - glass: 1
+  - 28:
+    name: Scientists Guild
+    age: 3
+    type: purple
+    effect:
+      - science: split
+    cost:
+      - wood: 2
+      - ore: 2
+      - papyrus: 1
+  - 29:
+    name: Magistrates Guild
+    age: 3
+    type: purple
+    effect:
+      - neighbor:
+        - type: victoryPoints
+        - directions: left-right
+        - basedOn: blue
+        - each: 1
+    cost:
+      - wood: 3
+      - stone: 1
+      - loom: 1
+  - 30:
+    name: Builders Guild
+    age: 3
+    type: purple
+    effect:
+      - neighbor:
+        - type: victoryPoints
+        - directions: left-self-right
+        - basedOn: wonders
+        - each: 1
+    cost:
+      - stone: 2
+      - clay: 2
+      - glass: 1
+  - 31:
+    name: Pawnshop
+    age: 1
+    type: blue
+    effect:
+      - victoryPoints: 3
+    frequency:
+      - 4
+      - 7
+  - 32:
+    name: Baths
+    age: 1
+    type: blue
+    effect:
+      - victoryPoints: 3
+    frequency:
+      - 3
+      - 7
+  - 33:
+    name: Altar
+    age: 1
+    type: blue
+    effect:
+      - victoryPoints: 2
+    frequency:
+      - 3
+      - 5
+  - 34:
+    name: Theater
+    age: 1
+    type: blue
+    effect:
+      - victoryPoints: 2
+    frequency:
+      - 3
+      - 6
+  - 35:
+    name: Aqueduct
+    age: 2
+    type: blue
+    effect:
+      - victoryPoints: 5
+    cost:
+      - stone: 3
+    parent: 32
+    frequency:
+      - 3
+      - 7
+  - 36:
+    name: Temple
+    age: 2
+    type: blue
+    effect:
+      - victoryPoints: 5
+    cost:
+      - wood: 1
+      - clay: 1
+      - glass: 1
+    parent: 33
+    frequency:
+      - 3
+      - 6
+  - 37:
+    name: Statue
+    age: 2
+    type: blue
+    effect:
+      - victoryPoints: 3
+    cost:
+      - wood: 1
+      - ore: 2
+    parent: 34
+    frequency:
+      - 3
+      - 7
+  - 38:
+    name: Pantheon
+    age: 3
+    type: blue
+    effect:
+      - victoryPoints: 7
+    cost:
+      - clay: 2
+      - ore: 1
+      - papyrus: 1
+      - loom: 1
+      - glass: 1
+    parent: 36
+    frequency:
+      - 3
+      - 6
+  - 39:
+    name: Gardens
+    age: 3
+    type: blue
+    effect:
+      - victoryPoints: 5
+    cost:
+      - wood: 1
+      - clay: 2
+    parent: 37
+    frequency:
+      - 3
+      - 4
+  - 40:
+    name: Town Hall
+    age: 3
+    type: blue
+    effect:
+      - victoryPoints: 6
+    cost:
+      - glass: 1
+      - ore: 1
+      - stone: 2
+    frequency:
+      - 3
+      - 5
+      - 6
+  - 41:
+    name: Palace
+    age: 3
+    type: blue
+    effect:
+      - victoryPoints: 8
+    cost:
+      - glass: 1
+      - papyrus: 1
+      - loom: 1
+      - clay: 1
+      - wood: 1
+      - ore: 1
+      - stone: 1
+    frequency:
+      - 3
+      - 7
+  - 42:
+    name: Stockade
+    age: 1
+    type: red
+    effect:
+      - warPoints: 1
+    cost:
+      - wood: 1
+    frequency:
+      - 3
+      - 7
+  - 43:
+    name: Barracks
+    age: 1
+    type: red
+    effect:
+      - warPoints: 1
+    cost:
+      - ore: 1
+    frequency:
+      - 3
+      - 5
+  - 44:
+    name: Guard Tower
+    age: 1
+    type: red
+    effect:
+      - warPoints: 1
+    cost:
+      - clay: 1
+    frequency:
+      - 3
+      - 4
+  - 45:
+    name: Walls
+    age: 2
+    type: red
+    effect:
+      - warPoints: 2
+    cost:
+      - stone: 3
+    frequency:
+      - 3
+      - 7
+  - 46:
+    name: Training Ground
+    age: 2
+    type: red
+    effect:
+      - warPoints: 2
+    cost:
+      - wood: 1
+      - ore: 2
+    frequency:
+      - 4
+      - 6
+      - 7
+  - 47:
+    name: Fortifications
+    age: 3
+    type: red
+    effect:
+      - warPoints: 3
+    cost:
+      - stone: 1
+      - ore: 3
+    parent: 45
+    frequency:
+      - 3
+      - 7
+  - 48:
+    name: Circus
+    age: 3
+    type: red
+    effect:
+      - warPoints: 3
+    cost:
+      - stone: 3
+      - ore: 1
+    parent: 46
+    frequency:
+      - 4
+      - 5
+      - 6
+  - 49:
+    name: Arsenal
+    age: 3
+    type: red
+    effect:
+      - warPoints: 3
+    cost:
+      - ore: 1
+      - wood: 2
+      - loom: 1
+    frequency:
+      - 3
+      - 4
+      - 7
+  - 50:
+    name: Tavern
+    age: 1
+    type: yellow
+    effect:
+      - coins: 5
+    frequency:
+      - 4
+      - 5
+      - 7
+  - 51:
+    name: East Trading Post
+    age: 1
+    type: yellow
+    effect:
+      - cheaperResources:
+        - direction: right
+        - resources:
+          - clay
+          - stone
+          - ore
+          - wood
+    frequency:
+      - 3
+      - 7
+  - 52:
+    name: West Trading Post
+    age: 1
+    type: yellow
+    effect:
+      - cheaperResources:
+        - direction: left
+        - resources:
+          - clay
+          - stone
+          - ore
+          - wood
+    frequency:
+      - 3
+      - 7
+  - 53:
+    name: Marketplace
+    age: 1
+    type: yellow
+    effect:
+      - cheaperResources:
+        - direction: left-right
+        - resources:
+          - loom
+          - glass
+          - papyrus
+    frequency:
+      - 3
+      - 6
+  - 54:
+    name: Forum
+    age: 2
+    type: yellow
+    effect:
+      - resources:
+        - split:
+          - loom
+          - glass
+          - papyrus
+    cost:
+      - clay: 2
+    parent:
+      - 51
+      - 52
+    frequency:
+      - 3
+      - 6
+      - 7
+  - 55:
+    name: Caravansery
+    age: 2
+    type: yellow
+    effect:
+      - resources:
+        - split:
+          - clay
+          - stone
+          - ore
+          - wood
+    cost:
+      - wood: 2
+    parent: 53
+    frequency:
+      - 3
+      - 5
+      - 6
+  - 56:
+    name: Vineyard
+    age: 2
+    type: yellow
+    effect:
+      - neighborCoins:
+        - directions: left-self-right
+        - basedOn: brown
+        - each: 1
+    frequency:
+      - 3
+      - 6
+  - 57:
+    name: Bazar
+    age: 2
+    type: yellow
+    effect:
+      - neighbor:
+        - type: coins
+        - directions: left-self-right
+        - basedOn: grey
+        - each: 2
+    frequency:
+      - 4
+      - 7
+  - 58:
+    name: Haven
+    age: 3
+    type: yellow
+    effect:
+      - neighbor:
+        - type: coins
+        - directions: self
+        - basedOn: brown
+        - each: 1
+      - neighbor:
+        - type: victoryPoints
+        - directions: self
+        - basedOn: brown
+        - each: 1
+    cost:
+      - loom: 1
+      - ore: 1
+      - wood: 1
+    parent: 54
+    frequency:
+      - 3
+      - 4
+  - 59:
+    name: Lighthouse
+    age: 3
+    type: yellow
+    effect:
+      - neighbor:
+        - type: coins
+        - directions: self
+        - basedOn: yellow
+        - each: 1
+      - neighbor:
+        - type: victoryPoints
+        - directions: self
+        - basedOn: yellow
+        - each: 1
+    cost:
+      - glass: 1
+      - stone: 1
+    parent: 55
+    frequency:
+      - 3
+      - 6
+  - 60:
+    name: Chamber of Commerce
+    age: 3
+    type: yellow
+    effect:
+      - neighbor:
+        - type: coins
+        - directions: self
+        - basedOn: grey
+        - each: 2
+      - neighbor:
+        - type: victoryPoints
+        - directions: self
+        - basedOn: grey
+        - each: 2
+    cost:
+      - clay: 2
+      - papyrus: 1
+    frequency:
+      - 4
+      - 6
+  - 61:
+    name: Apothecary
+    age: 1
+    type: green
+    effect:
+      - science: sextant
+    cost:
+      - loom: 1
+    frequency:
+      - 3
+      - 5
+  - 62:
+    name: Workshop
+    age: 1
+    type: green
+    effect:
+      - science: gear
+    cost:
+      - glass: 1
+    frequency:
+      - 3
+      - 7
+  - 63:
+    name: Scriptorium
+    age: 1
+    type: green
+    effect:
+      - science: slate
+    cost:
+      - papyrus: 1
+    frequency:
+      - 3
+      - 4
+  - 64:
+    name: Stables
+    age: 2
+    type: red
+    effect:
+      - warPoints: 2
+    cost:
+      - ore: 1
+      - clay: 1
+      - wood: 1
+    parent: 61
+    frequency:
+      - 3
+      - 5
+  - 65:
+    name: Dispensary
+    age: 2
+    type: green
+    effect:
+      - science: sextant
+    cost:
+      - ore: 2
+      - glass: 1
+    parent: 61
+    frequency:
+      - 3
+      - 4
+  - 66:
+    name: Archery Range
+    age: 2
+    type: red
+    effect:
+      - warPoints: 2
+    cost:
+      - wood: 2
+      - ore: 1
+    parent: 62
+    frequency:
+      - 3
+      - 6
+  - 67:
+    name: Laboratory
+    age: 2
+    type: green
+    effect:
+      - science: gear
+    cost:
+      - clay: 2
+      - papyrus: 1
+    parent: 62
+    frequency:
+      - 3
+      - 5
+  - 68:
+    name: Courthouse
+    age: 2
+    type: blue
+    effect:
+      - victoryPoints: 4
+    cost:
+      - clay: 2
+      - loom: 1
+    parent: 63
+    frequency:
+      - 3
+      - 5
+  - 69:
+    name: Library
+    age: 2
+    type: green
+    effect:
+      - science: slate
+    cost:
+      - stone: 2
+      - loom: 1
+    parent: 63
+    frequency:
+      - 3
+      - 6
+  - 70:
+    name: School
+    age: 2
+    type: green
+    effect:
+      - science: slate
+    cost:
+      - wood: 1
+      - papyrus: 1
+    frequency:
+      - 3
+      - 7
+  - 71:
+    name: Arena
+    age: 3
+    type: yellow
+    effect:
+      - neighbor:
+        - type: coins
+        - directions: self
+        - basedOn: wonders
+        - each: 3
+      - neighbor:
+        - type: victoryPoints
+        - directions: self
+        - basedOn: wonders
+        - each: 1
+    cost:
+      - ore: 1
+      - stone: 2
+    parent: 65
+    frequency:
+      - 3
+      - 5
+      - 7
+  - 72:
+    name: Lodge
+    age: 3
+    type: green
+    effect:
+      - science: sextant
+    cost:
+      - clay: 2
+      - loom: 1
+      - papyrus: 1
+    parent: 65
+    frequency:
+      - 3
+      - 6
+  - 73:
+    name: Siege Workshop
+    age: 3
+    type: red
+    effect:
+      - warPoints: 3
+    cost:
+      - wood: 1
+      - clay: 3
+    parent: 67
+    frequency:
+      - 3
+      - 5
+  - 74:
+    name: Observatory
+    age: 3
+    type: green
+    effect:
+      - science: gear
+    cost:
+      - ore: 2
+      - glass: 1
+      - loom: 1
+    parent: 67
+    frequency:
+      - 3
+      - 7
+  - 75:
+    name: Senate
+    age: 3
+    type: blue
+    effect:
+      - victoryPoints: 6
+    cost:
+      - ore: 1
+      - stone: 1
+      - wood: 2
+    parent: 69
+    frequency:
+      - 3
+      - 5
+  - 76:
+    name: University
+    age: 3
+    type: green
+    effect:
+      - science: slate
+    cost:
+      - wood: 2
+      - papyrus: 1
+      - glass: 1
+    parent: 69
+    frequency:
+      - 3
+      - 4
+  - 77:
+    name: Academy
+    age: 3
+    type: green
+    effect:
+      - science: sextant
+    cost:
+      - stone: 3
+      - glass: 1
+    parent: 70
+    frequency:
+      - 3
+      - 7
+  - 78:
+    name: Study
+    age: 3
+    type: green
+    effect:
+      - science: gear
+    cost:
+      - wood: 1
+      - papyrus: 1
+      - loom: 1
+    parent: 70
+    frequency:
+      - 3
+      - 5
