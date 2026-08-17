@@ -11,3 +11,7 @@ Player::Player(std::string name) {
 void Player::makeMove() const {
   std::cout << "Player: " << this->name << " made mocked move." << std::endl;
 }
+
+std::string Player::getName() const {
+  return this->name;
+}

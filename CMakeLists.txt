@@ -14,10 +14,12 @@ else()
     add_compile_options(-Wall -Wextra -pedantic -Werror -g)
 endif()
 
+enable_testing()
 
 add_subdirectory(apps)
 add_subdirectory(configs)
 add_subdirectory(src)
+add_subdirectory(tests)
 
 include_directories(src)
 

@@ -10,4 +10,5 @@ class Player {
  public:
   Player(std::string name);
   void makeMove() const;
+  std::string getName() const;
 };
