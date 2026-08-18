@@ -29,6 +29,8 @@ enum class Direction { Left, Self, Right };
 
 enum class NeighborEffectType { Coins, VictoryPoints };
 
+enum class CardType { Brown, Grey, Yellow, Green, Red, Purple, Blue };
+
 enum class NeighborEffectSource {
   BrownCards,
   GreyCards,

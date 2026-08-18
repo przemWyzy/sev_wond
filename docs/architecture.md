@@ -28,11 +28,42 @@ Dependencies:
 | Class               | Includes     | Forward Declaration |
 |---------------------|--------------|---------------------|
 | Game                | Deck, Town   | Player, Card        |
-| GameEntitiesFactory | Town, Card   |                     |
+| GameEntitiesFactory | Deck, Town   |                     |
 | Player              | -            | Town, Card          |
 | Deck                | Card         | -                   |
 | Town                | -            | Card                |
 | Card                | EntityEffect | -                   |
+
+## Player classes structure
+
+```mermaid
+classDiagram
+    class Player {
+        *virtual* makeMove()
+    }
+    class HumanPlayer {
+        makeMove()
+    }
+    class ComputerPlayer {
+        makeMove()
+        *virtual* calculateMove()
+    }
+    class RandomPlayer {
+        calculateMove()
+    }
+    class NaivePlayer {
+        calculateMove()
+    }
+    class MinMaxPlayer {
+        calculateMove()
+    }
+
+    Player <|-- HumanPlayer
+    Player <|-- ComputerPlayer
+    ComputerPlayer <|-- RandomPlayer
+    ComputerPlayer <|-- NaivePlayer
+    ComputerPlayer <|-- MinMaxPlayer
+```
 
 ## Game state diagram
 
